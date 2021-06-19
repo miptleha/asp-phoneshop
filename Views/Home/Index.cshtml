@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Phone>
+
+<h3>Phones</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Manufacturer</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model)
+        {
+            <tr>
+                <td class="align-middle">@p.Name</td>
+                <td class="align-middle">@p.Manufacturer</td>
+                <td class="align-middle">@p.Price.ToString("c", new CultureInfo("en-US"))</td>
+                <td class="align-middle"><a class="btn btn-primary" href="~/Home/Buy/@p.PhoneId">Buy</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

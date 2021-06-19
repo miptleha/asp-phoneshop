@@ -1,0 +1,24 @@
+﻿@model Phone
+
+<h3>Phone</h3>
+<p>Name: @Model.Name</p>
+<p>Manufacturer: @Model.Manufacturer</p>
+<p>Price: @Model.Price.ToString("c", new CultureInfo("en-US"))</p>
+
+<h3>Contact</h3>
+<form method="post" action="~/Home/Buy">
+    <div class="form-group">
+        <label for="tbName">Name</label>
+        <input type="text" class="form-control" name="Buyer" required id="tbName" />
+    </div>
+    <div class="form-group">
+        <label for="tbAddress">Address</label>
+        <input type="text" class="form-control" name="Address" required id="tbAddress" />
+    </div>
+    <div class="form-group">
+        <label for="tbContact">Phone</label>
+        <input type="text" class="form-control" name="Contact" required id="tbContact" />
+    </div>
+    <button class="btn btn-primary">Order</button>
+    <input type="hidden" name="PhoneId" value="@Model.PhoneId" />
+</form>

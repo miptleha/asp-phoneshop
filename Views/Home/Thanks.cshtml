@@ -1,0 +1,15 @@
+﻿@model Order
+
+<h2>Thanks for buying!</h2>
+
+<h3>Your order</h3>
+<p>Phone: @Model.Phone.Name</p>
+<p>Manufacturer: @Model.Phone.Manufacturer</p>
+<p>Price: @Model.Phone.Price.ToString("c", new CultureInfo("en-US"))</p>
+
+<h3>Contact</h3>
+<p>Name: @Model.Buyer</p>
+<p>Address: @Model.Address</p>
+<p>Phone: @Model.Contact</p>
+
+<a class="btn btn-primary" href="~/">Back</a>
